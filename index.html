@@ -9,6 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .stat-card__tag{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent,#c9a227);margin-bottom:.4rem;}
+    .blog-section{background:var(--surface-low,#f5f5f7);}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;margin-top:3rem;}
+    .blog-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+    .blog-card__image{background:#e5e7eb;height:200px;}
+    .blog-card__body{padding:1.5rem;}
+    .blog-card__title{font-size:1.125rem;font-weight:700;margin:0 0 .5rem;}
+    .blog-card__desc{color:#6b7280;font-size:.95rem;margin:0;}
+  </style>
   <link rel="icon" type="image/svg+xml" href="assets/logos/dialzero-icon.svg">
 </head>
 <body>
@@ -105,19 +115,22 @@
   <div class="container">
     <p class="eyebrow eyebrow--dark">The Invisible Cost</p>
     <h2>Facility services is one of the most labor-intensive industries on the planet. It's also one of the least automated.</h2>
-    <p class="lead">Hotel groups, stadiums, and retail centers are running on group texts, radio calls, and paper trails. DialZero changes that, without replacing the people who make it all work.</p>
+    <p class="lead">Hotels, office buildings, stadiums, and retail centers are running on group texts, radio calls, and paper trails. DialZero changes that — without replacing the people who make it all work.</p>
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-card__number">500 rooms</div>
-        <div class="stat-card__label">Eight hotels all removed labor from processing one redundant check-in call each week, saving one dedicated headcount per site.</div>
+        <div class="stat-card__tag">Labor Intense</div>
+        <div class="stat-card__number">50%</div>
+        <div class="stat-card__label">Labor % of Total FM Budget</div>
       </div>
       <div class="stat-card">
-        <div class="stat-card__number">30%</div>
-        <div class="stat-card__label">Of total compensation now accounts for worker benefits, up sharply year-over-year, with no matching productivity gain.</div>
+        <div class="stat-card__tag">Labor Costs</div>
+        <div class="stat-card__number">12.8%</div>
+        <div class="stat-card__label">YoY ('24→'25) CPOR increase in hospitality</div>
       </div>
       <div class="stat-card">
-        <div class="stat-card__number">3.4%</div>
-        <div class="stat-card__label">Enterprise customer success AI builder, and co-host series driving measurable impact across facility operations.</div>
+        <div class="stat-card__tag">Labor Shortage</div>
+        <div class="stat-card__number">1M</div>
+        <div class="stat-card__label">Job Openings</div>
       </div>
     </div>
   </div>
@@ -249,7 +262,7 @@
 <!-- ═══════════════════════════════════ ONBOARDING -->
 <section class="section onboarding-section" id="onboarding">
   <div class="container">
-    <p class="eyebrow">Time: 3 Weeks</p>
+    <p class="eyebrow">From Sign-Off to Live</p>
     <h2>Live in under an hour.<br>No migration required.</h2>
     <div class="steps-grid">
       <div class="step-card">
@@ -298,8 +311,26 @@
           <img src="assets/images/amots.jpg" alt="Amots Yanai" loading="lazy">
         </div>
         <div class="team-card__name">Amots Yanai</div>
-        <div class="team-card__title">COO</div>
+        <div class="team-card__title">VP Operations</div>
         <p class="team-card__bio">Expert in enterprise customer success, AI builder, and co-host series driving operational impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ BLOG -->
+<section class="section blog-section" id="blog">
+  <div class="container">
+    <p class="eyebrow eyebrow--dark">Blog</p>
+    <h2>Insights from the Field</h2>
+    <p class="platform-sub">Perspectives on agentic AI, facility operations, and the future of work.</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-card__image"></div>
+        <div class="blog-card__body">
+          <h3 class="blog-card__title">Coming Soon</h3>
+          <p class="blog-card__desc">Our first post is on its way.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -310,7 +341,7 @@
   <div class="container">
     <h2>Ready to see DialZero in action?</h2>
     <a href="https://calendly.com/d/cr38-fbh-6f4/dialzero-demo" target="_blank" rel="noopener" class="btn btn-gold">Book a Demo</a>
-    <p class="cta-sub">Questions? Email us at <a href="mailto:support@dialzero.ai">support@dialzero.ai</a></p>
+    <p class="cta-sub">Questions? Email us at <a href="mailto:support@dialzero.app">support@dialzero.app</a></p>
   </div>
 </section>
 
