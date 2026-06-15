@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: amots12/dz-website
+  branch: main
+  base_url: https://YOUR-OAUTH-PROXY-DOMAIN
+
+publish_mode: editorial_workflow
+
+media_folder: "assets/images/blog"
+public_folder: "/assets/images/blog"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    label_singular: "Post"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "json"
+    fields:
+      - { label: "Title",       name: "title",       widget: "string" }
+      - { label: "Date",        name: "date",         widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Author",      name: "author",       widget: "string",   default: "Omri Halak" }
+      - { label: "Cover Image", name: "cover_image",  widget: "image",    required: false }
+      - { label: "Excerpt",     name: "excerpt",      widget: "text",     hint: "Short summary shown on the blog index page. Max 2 sentences." }
+      - { label: "Body",        name: "body",         widget: "markdown" }
