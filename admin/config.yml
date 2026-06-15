@@ -2,7 +2,7 @@ backend:
   name: github
   repo: amots12/dz-website
   branch: main
-  base_url: https://YOUR-OAUTH-PROXY-DOMAIN
+  base_url: https://dz-oauth.amotsy.workers.dev
 
 publish_mode: editorial_workflow
 
