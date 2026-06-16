@@ -3,6 +3,7 @@ backend:
   repo: amots12/dz-website
   branch: main
   app_id: Ov23littS4944nYArtl5
+  auth_type: pkce
 
 publish_mode: editorial_workflow
 

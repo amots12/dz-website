@@ -147,10 +147,14 @@
   }
 
   try {
-    const idxRes = await fetch('../_posts/index.json');
-    if (!idxRes.ok) { placeholder(); return; }
-    const slugs = await idxRes.json();
-    if (!Array.isArray(slugs) || slugs.length === 0) { placeholder(); return; }
+    const apiRes = await fetch('https://api.github.com/repos/amots12/dz-website/contents/_posts?ref=main');
+    if (!apiRes.ok) { placeholder(); return; }
+    const files = await apiRes.json();
+    const slugs = files
+      .filter(f => f.type === 'file' && f.name.endsWith('.json') && f.name !== 'index.json')
+      .map(f => f.name.replace('.json', ''))
+      .sort().reverse();
+    if (!slugs.length) { placeholder(); return; }
 
     grid.innerHTML = '';
     await Promise.all(slugs.map(async slug => {
