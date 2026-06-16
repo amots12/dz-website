@@ -281,12 +281,13 @@ p  { font-size: 16px; line-height: 1.65; color: var(--on-surface-variant); }
 /* ── PROBLEM SECTION ─────────────────────────────────────── */
 .problem-section { background: #fff; }
 .problem-section .eyebrow { margin-bottom: 20px; }
-.problem-section h2 { max-width: 680px; margin-bottom: 24px; color: var(--on-surface); }
+.problem-section h2 { max-width: 680px; margin: 0 auto 24px; color: var(--on-surface); text-align: center; }
 .problem-section .lead {
   font-size: 16px;
   color: var(--on-surface-variant);
   max-width: 600px;
-  margin-bottom: 56px;
+  margin: 0 auto 56px;
+  text-align: center;
 }
 .stats-grid {
   display: grid;
