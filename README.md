@@ -34,3 +34,5 @@ Blog posts are edited via the CMS at `/admin`. Sign in with GitHub (requires acc
 ## Deployment
 
 Cloudflare Pages watches `main`. Any push to `main` triggers a deploy — no build command, files are served as-is.
+
+### test
