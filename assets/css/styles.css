@@ -152,6 +152,28 @@ p  { font-size: 16px; line-height: 1.65; color: var(--on-surface-variant); }
 }
 .nav__links a:hover { color: #fff; }
 .nav__cta .btn { padding: 10px 22px; font-size: 14px; }
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: 12px;
+}
+.nav__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.nav__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__hamburger.open span:nth-child(2) { opacity: 0; }
+.nav__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── HERO ────────────────────────────────────────────────── */
 .hero {
@@ -565,7 +587,8 @@ p  { font-size: 16px; line-height: 1.65; color: var(--on-surface-variant); }
   border-bottom: 1px solid rgba(255,255,255,0.08);
   margin-bottom: 32px;
 }
-.footer__brand img { height: 24px; margin-bottom: 16px; }
+.footer__brand img,
+.footer__brand svg { height: 24px; width: auto; display: block; margin-bottom: 16px; max-width: 100%; }
 .footer__brand p { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 280px; }
 .footer__col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
 .footer__col ul { display: flex; flex-direction: column; gap: 12px; }
@@ -600,7 +623,24 @@ p  { font-size: 16px; line-height: 1.65; color: var(--on-surface-variant); }
 }
 
 @media (max-width: 768px) {
-  .nav__links { display: none; }
+  .nav__hamburger { display: flex; }
+  .nav__links {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0; right: 0;
+    background: rgba(8,0,34,0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 12px 0 24px;
+    gap: 0;
+    z-index: 99;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav__links.open { display: flex; }
+  .nav__links li { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav__links a { display: block; padding: 14px 24px; font-size: 15px; color: rgba(255,255,255,0.8); }
   .stats-grid,
   .agents-grid,
   .investor-stats,
