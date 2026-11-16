@@ -354,23 +354,9 @@
   }
 
   try {
-    const apiRes = await fetch('https://api.github.com/repos/amots12/dz-website/contents/_posts?ref=main');
-    if (!apiRes.ok) { placeholder(); return; }
-    const files = await apiRes.json();
-    const slugs = files
-      .filter(f => f.type === 'file' && f.name.endsWith('.json') && f.name !== 'index.json')
-      .map(f => f.name.replace('.json', ''))
-      .sort().reverse()
-      .slice(0, 3);
-    if (!slugs.length) { placeholder(); return; }
-
-    const posts = await Promise.all(slugs.map(async slug => {
-      try {
-        const res = await fetch('/_posts/' + slug + '.json');
-        if (!res.ok) return null;
-        return { post: await res.json(), slug };
-      } catch { return null; }
-    }));
+    const res = await fetch('/_posts/index.json');
+    if (!res.ok) { placeholder(); return; }
+    const posts = (await res.json()).slice(0, 3).map(post => ({ post, slug: post.slug }));
 
     const valid = posts.filter(Boolean);
     if (!valid.length) { placeholder(); return; }
