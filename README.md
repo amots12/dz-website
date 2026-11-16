@@ -51,7 +51,10 @@ node scripts/build-index.js
 
 ## CMS login (OAuth proxy)
 
-GitHub OAuth needs a server-side secret, so CMS login goes through a small Cloudflare Worker, `dz-oauth-worker` at `https://dz-oauth-worker.amotsy.workers.dev`. Its URL is set as `base_url` in `admin/config.yml`. The Worker holds the GitHub OAuth app's `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` as secrets. If CMS login breaks, check the Worker and the OAuth app first.
+GitHub OAuth needs a server-side secret, so CMS login goes through a small Cloudflare Worker, `dz-oauth-worker` at `https://dz-oauth-worker.amotsy.workers.dev`. Its URL is set as `base_url` in `admin/config.yml`. The Worker holds the GitHub OAuth app's `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` as secrets. These are stored in Cloudflare only and are never committed to any repo.
+
+- **Source code:** [`amots12/dz-oauth-worker`](https://github.com/amots12/dz-oauth-worker), a private repo. Its README covers deploying, setting or rotating secrets, and troubleshooting.
+- **If CMS login breaks:** check the Worker and the GitHub OAuth app first. See "If CMS login breaks" in the worker repo's README.
 
 ## Deployment
 
